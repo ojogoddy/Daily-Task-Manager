@@ -70,14 +70,15 @@
 
   .tasks-created-group{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     width: 100%;
     margin-bottom: 100px;
   }
+
   .tasks-created {
     margin-top: 1.25rem;
     flex: 1;
-    min-width: 350px;
+    min-width: 280px;
     background-color: var(--secondary-bg);
     border-radius: 0.625rem;
     padding: 1.25rem;
@@ -328,7 +329,7 @@
     border-radius: 0.3125rem;
 }
 .completed-task {
-  background-color: #155724;
+  background-color: var(--checked-color);
   color: var(--text-color);
   font-size: 0.875rem;
   padding: 0.125rem;
