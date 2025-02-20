@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo-App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5bc8b05b41.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <!-- Header -->
+     <header class="header">
+        <div class="header-text">
+            <h1>Hey, Guest</h1>
+            <p id="dateTime"></p>
+         </div>
+         <div class="profile-icon">
+            <i class="fa-solid fa-circle-user"></i>
+         </div>
+     </header>
+
+     <!-- {/* Tasks description Section */} -->
+     <section class="tasks-section">
+       <div class="tasks-header">
+         <h2>Today's tasks</h2>
+         <button class="add-task-btn" onclick="openModal()">
+            <i class="fa-solid fa-plus"></i>
+         </button>
+       </div>
+    </section>
+
+       <!-- task created -->
+        <section class="tasks-created-group">
+        </section>
+
+    <!-- Add Task Button -->
+
+   <footer class="footer-back">
+    <div class="container">
+        <button class="btn" onclick="openModal()">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+    </div>
+   </footer>
+
+ <!-- Modal -->
+  <div id="modalOverlay" class="modal-overlay"></div>
+ <div id="taskModal" class="modal">
+    <div class="close-btn" onclick="closeModal()">
+        <i class="fa-solid fa-xmark"></i>
+    </div>
+    <h2 class="modal-title">Add Task</h2>
+   <form onsubmit="event.preventDefault(); saveTask()">
+    <div>
+        <label for="taskTitle">Task Title</label>
+    <input type="text" id="taskTitle" placeholder="Task Title">
+    </div>
+    <div class="time-container">
+        <label for="startTime">Start Time:</label>
+        <input type="time" id="startTime">
+    </div>
+
+    <!-- End Time -->
+    <div class="time-container">
+        <label for="endTime">End Time:</label>
+        <input type="time" id="endTime">
+    </div>
+
+    <div class="modal-buttons">
+        <button type="submit" class="save-btn" onclick="">Save</button>
+    </div>
+    </form>
+</div>
+
+ <!-- Edit Task Modal -->
+<div id="editModalOverlay" class="modal-overlay"></div>
+<div id="taskModalEdit" class="modal">
+  <div class="close-btn" onclick="closeEditModal()">
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+  <h2 class="modal-title">Edit Task</h2>
+  <form onsubmit="event.preventDefault(); saveEditTask();">
+    <div>
+      <label for="editTaskTitle">Task Title</label>
+      <input type="text" id="editTaskTitle" placeholder="Task Title">
+    </div>
+    <div class="time-container">
+      <label for="editStartTime">Start Time:</label>
+      <input type="time" id="editStartTime">
+    </div>
+    <div class="time-container">
+      <label for="editEndTime">End Time:</label>
+      <input type="time" id="editEndTime">
+    </div>
+    <div class="modal-buttons">
+      <button type="submit" class="save-btn">Update</button>
+    </div>
+  </form>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
